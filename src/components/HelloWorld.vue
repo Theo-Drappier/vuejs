@@ -84,13 +84,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your App'
+      msg: 'Welcome to Your App',
+      get: []
     }
+  },
+  created () {
+    axios.get('http://127.0.0.1:8000/api/tests')
+      .then(response => {
+        console.log(response)
+        this.get = response.data
+      }
+      )
+      .catch(e => {
+        console.log(e)
+      }
+      )
   }
+
 }
 </script>
 

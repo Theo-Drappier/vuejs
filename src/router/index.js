@@ -13,3 +13,15 @@ export default new Router({
     }
   ]
 })
+
+/*
+let jsonResponse = 0
+
+let xhttp = new XMLHttpRequest()
+xhttp.overrideMimeType('application/json')
+xhttp.open('GET', 'http://localhost:8000/api/tests', true)
+xhttp.onload = function () {
+  jsonResponse = xhttp.response
+}
+xhttp.send(null)
+*/
