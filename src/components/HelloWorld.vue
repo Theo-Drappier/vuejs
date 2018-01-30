@@ -80,6 +80,11 @@
         </a>
       </li>
     </ul>
+    <ul>
+      <li v-for="todo in todosList" :key='todo.id'>
+        {{ todo.id }} => {{ todo.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -91,14 +96,13 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your App',
-      get: []
+      todosList: []
     }
   },
   created () {
     axios.get('http://127.0.0.1:8000/api/tests')
       .then(response => {
-        console.log(response)
-        this.get = response.data
+        this.todosList = response.data
       }
       )
       .catch(e => {
