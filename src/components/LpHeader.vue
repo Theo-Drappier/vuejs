@@ -1,26 +1,22 @@
 <template>
   <div>
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        {{ todo.label }}
-      </li>
-    </ul>
+    <div>Il y a {{count}}</div>
   </div>
 </template>
+
 
 <script>
 
 export default {
-  name: `Todos`,
+  name: `lpHeader`,
   computed: {
-    todos() {
-      return this.$store.getters.todos;
+    count() {
+      return this.$store.getters.count;
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;

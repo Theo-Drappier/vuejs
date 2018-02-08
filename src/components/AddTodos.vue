@@ -1,26 +1,22 @@
 <template>
   <div>
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        {{ todo.label }}
-      </li>
-    </ul>
+    <input v-model="todoLabel" />
   </div>
 </template>
+
 
 <script>
 
 export default {
-  name: `Todos`,
+  name: `addTodos`,
   computed: {
-    todos() {
-      return this.$store.getters.todos;
+    addTodos() {
+      this.$store.getters.count;
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
